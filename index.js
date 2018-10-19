@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/restaurants')
   .then(() => console.log('Connected to MongoDB...'))
   .catch(() => console.log('Connection to MongoDB failed...'));
 
+app.use(express.json());
 app.use('/api/restaurants', restaurantsRoutes);
 
 app.listen(3000, () => {
@@ -16,5 +17,5 @@ app.listen(3000, () => {
 
 app.get('/', (req, res) => {
   console.log(`food-data-service is running on port ${port}...`);
-  res.redirect('/api/restaurants');
+  res.send('test running');
 });
