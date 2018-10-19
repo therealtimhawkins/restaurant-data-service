@@ -17,6 +17,11 @@ const restaurantSchema = new mongoose.Schema({
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
+async function getRestaurant(params) {
+  return await Restaurant
+    .find({postcode: params.postcode});
+}
+
 async function postRestaurant(body) {
   let restaurant = new Restaurant({
     name: body.name,
@@ -27,5 +32,6 @@ async function postRestaurant(body) {
 }
 
 module.exports = {
+  getRestaurant,
   postRestaurant,
 }
