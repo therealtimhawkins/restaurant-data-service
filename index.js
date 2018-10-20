@@ -11,7 +11,6 @@ mongoose.connect('mongodb://testuser:testuser1@ds016138.mlab.com:16138/restauran
 app.use(express.json());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  res.setHeader('Access-Control-Allow-Origin', 'https://web-ui-service.herokuapp.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);

@@ -19,7 +19,7 @@ const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
 async function getRestaurant(params) {
   return await Restaurant
-    .find({postcode: params.postcode});
+    .find({postcode: params.postcode.toUpperCase()});
 }
 
 async function getRestaurants() {
