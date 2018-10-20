@@ -11,7 +11,7 @@ mongoose.connect('mongodb://restaurant-data-service-user:999apple%@ds016138.mlab
 app.use(express.json());
 app.use('/api/restaurants', restaurantsRoutes);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
 
