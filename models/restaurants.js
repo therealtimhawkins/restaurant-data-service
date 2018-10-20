@@ -22,6 +22,11 @@ async function getRestaurant(params) {
     .find({postcode: params.postcode});
 }
 
+async function getRestaurants() {
+  console.log('working');
+  return await Restaurant.find();
+}
+
 async function postRestaurant(body) {
   let restaurant = new Restaurant({
     name: body.name,
@@ -33,5 +38,6 @@ async function postRestaurant(body) {
 
 module.exports = {
   getRestaurant,
+  getRestaurants,
   postRestaurant,
 }
