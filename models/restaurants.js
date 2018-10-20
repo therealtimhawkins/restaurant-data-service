@@ -23,8 +23,9 @@ async function getRestaurant(params) {
 }
 
 async function getRestaurants() {
-  console.log('working');
-  return await Restaurant.find();
+  let result = await Restaurant.find();
+  console.log(result);
+  return result;
 }
 
 async function postRestaurant(body) {
