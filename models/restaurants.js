@@ -24,7 +24,6 @@ async function getRestaurant(params) {
 
 async function getRestaurants() {
   let result = await Restaurant.find();
-  console.log(result);
   return result;
 }
 
