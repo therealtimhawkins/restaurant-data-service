@@ -13,7 +13,7 @@ describe('/api/restaurants', () => {
   });
 
 
-  describe('GET /', () => {
+  describe('GET /api/restaurant', () => {
     it('should return a status of 200', async () => {
       const res = await request(server).get('/api/restaurants');
       expect(res.status).toBe(200);
@@ -33,6 +33,7 @@ describe('/api/restaurants', () => {
       ])
 
       const res = await request(server).get('/api/restaurants');
+      console.log(res.body);
       expect(res.body.length).toBe(2);
     });
   });
