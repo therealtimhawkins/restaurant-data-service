@@ -3,7 +3,7 @@ const {Restaurant} = require('../../models/restaurants')
 
 let server;
 
-describe('/api/restaurants', () => {
+describe('GET /api/restaurants', () => {
   beforeEach( async () => {
     server = require('../../index');
     await Restaurant.collection.insertMany([
@@ -45,6 +45,12 @@ describe('/api/restaurants', () => {
     it('should return restaurants in the postcode param', async () => {
       const res = await request(server).get('/api/restaurants/E147DX');
       expect(res.body.length).toBe(1);
+    });
+  });
+
+  describe('POST /api/restaurant', () => {
+    it('should save the body param to the database', () => {
+
     });
   });
 });
