@@ -49,8 +49,17 @@ describe('GET /api/restaurants', () => {
   });
 
   describe('POST /api/restaurant', () => {
-    it('should save the body param to the database', () => {
+    it('should save the body param to the database', async () => {
+      const body = {
+        name: 'Chesters Chicken',
+        postcode: 'E147DX',
+        rating: 5
+      }
 
+      const res = await request(server).post('/api/restaurants').send(body);
+      expect(res.body.name).toEqual('Chesters Chicken');
+      expect(res.body.postcode).toEqual('E147DX');
+      expect(res.body.rating).toEqual(5);
     });
   });
 });
