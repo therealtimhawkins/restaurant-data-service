@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const restaurantsRoutes = require('./routes/restaurants');
 
 mongoose.connect(config.get('db'))
-  .then(() => console.log('Connected to MongoDB...'))
+  .then(() => console.log(`Connected to ${config.get('db')}...`))
   .catch(() => console.log('Connection to MongoDB failed...'));
 
 app.use(express.json());

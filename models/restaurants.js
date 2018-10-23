@@ -37,6 +37,7 @@ async function postRestaurant(body) {
 }
 
 module.exports = {
+  Restaurant,
   getRestaurant,
   getRestaurants,
   postRestaurant,
