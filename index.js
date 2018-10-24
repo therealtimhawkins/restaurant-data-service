@@ -21,8 +21,4 @@ const server = app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
 
-app.get('/', (req, res) => {
-  res.send('restaurant-data-service is running...');
-});
-
 module.exports = server;
