@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {Restaurant} = require('../../models/restaurants')
+const {Restaurant} = require('../../src/models/restaurants')
 
 let server;
 

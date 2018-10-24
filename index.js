@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const config = require('config');
 const port = process.env.PORT || 3000;
-const restaurantsRoutes = require('./routes/restaurants');
+const restaurantsRoutes = require('./src/routes/restaurants');
 
-require('./startup/db')();
+require('./src/startup/db')();
 
 app.use(express.json());
 app.use(function (req, res, next) {
