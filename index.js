@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const config = require('config');
-const port = process.env.PORT || 3000;
+const error = require('./src/middleware/error');
 const restaurantsRoutes = require('./src/routes/restaurants');
+const port = process.env.PORT || 3000;
 
 require('./src/startup/db')();
 
@@ -17,9 +18,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(function(err, req, res, next) {
-  res.status(500).send('An error occured...');
-});
+app.use(error);
 
 const server = app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
