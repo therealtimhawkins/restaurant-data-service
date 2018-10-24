@@ -1,5 +1,5 @@
 const request = require('supertest');
-const {Restaurant} = require('../../src/models/restaurants')
+const {Restaurant} = require('../../src/models/restaurants');
 
 let server;
 
@@ -18,11 +18,11 @@ describe('GET /api/restaurants', () => {
       }
     ]);
   });
+
   afterEach(async () => {
     server.close();
     await Restaurant.remove({});
   });
-
 
   describe('GET /api/restaurant', () => {
     it('should return a status of 200', async () => {
@@ -45,6 +45,11 @@ describe('GET /api/restaurants', () => {
     it('should return restaurants in the postcode param', async () => {
       const res = await request(server).get('/api/restaurants/E147DX');
       expect(res.body.length).toBe(1);
+    });
+
+    it('should return an error message if there are no restaurants in postcode', async () => {
+      const res = await request(server).get('/api/restaurants/E147ZT');
+      expect(res.body.length).toBe(0);
     });
   });
 
