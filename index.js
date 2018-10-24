@@ -1,13 +1,10 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 const config = require('config');
 const port = process.env.PORT || 3000;
 const restaurantsRoutes = require('./routes/restaurants');
 
-mongoose.connect(config.get('db'))
-  .then(() => console.log(`Connected to ${config.get('db')}...`))
-  .catch(() => console.log('Connection to MongoDB failed...'));
+require('./startup/db')();
 
 app.use(express.json());
 app.use(function (req, res, next) {
