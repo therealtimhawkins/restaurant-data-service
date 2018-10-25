@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const winston = require('winston');
 const error = require('./src/middleware/error');
 const cors = require('./src/middleware/cors');
 const restaurantsRoutes = require('./src/routes/restaurants');

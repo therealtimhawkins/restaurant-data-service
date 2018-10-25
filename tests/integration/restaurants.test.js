@@ -1,5 +1,6 @@
 const request = require('supertest');
 const {Restaurant} = require('../../src/models/restaurants');
+const restaurantMockData = require('../mocks/restaurantMock');
 
 let server;
 
@@ -25,6 +26,7 @@ describe('GET /api/restaurants', () => {
   });
 
   describe('GET /api/restaurant', () => {
+    console.log(restaurantMockData.data);
     it('should return a status of 200', async () => {
       const res = await request(server).get('/api/restaurants');
       expect(res.status).toBe(200);
