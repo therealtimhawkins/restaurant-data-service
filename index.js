@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const error = require('./src/middleware/error');
 const corsMiddleware = require('./src/middleware/cors');
-const config = require('config');
 const restaurantsRoutes = require('./src/routes/restaurants');
 const port = process.env.PORT || 3000;
 
