@@ -4,8 +4,8 @@ const model = require('../models/restaurants');
 const asyncMiddleware = require('../middleware/async');
 
 router.get('/', asyncMiddleware(async (req, res) => {
-    const restaurants = await model.getRestaurants();
-    res.send(restaurants);
+  const restaurants = await model.getRestaurants();
+  res.send(restaurants);
 }));
 
 router.get('/:postcode', asyncMiddleware(async (req, res) => {

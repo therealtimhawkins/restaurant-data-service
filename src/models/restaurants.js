@@ -7,10 +7,18 @@ const restaurantSchema = new mongoose.Schema({
   },
   postcode: {
     type: String,
-    require: true,
+    require: false,
+  },
+  coords: {
+    type: Array,
+    required: false,
   },
   rating: {
     type: Number,
+    required: false,
+  },
+  dishes: {
+    type: Array,
     required: true,
   }
 });
@@ -31,7 +39,9 @@ async function postRestaurant(body) {
   let restaurant = new Restaurant({
     name: body.name,
     postcode: body.postcode,
+    coords: body.coords,
     rating: body.rating,
+    dishes: body.dishes,
   })
   return await restaurant.save();
 }
