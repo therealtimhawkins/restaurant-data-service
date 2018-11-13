@@ -7,15 +7,15 @@ const restaurantSchema = new mongoose.Schema({
   },
   postcode: {
     type: String,
-    require: false,
+    require: true,
   },
   coords: {
     type: Array,
-    required: false,
+    required: true,
   },
   rating: {
     type: Number,
-    required: false,
+    required: true,
   },
   dishes: {
     type: Array,
