@@ -1,4 +1,4 @@
 {
   "db": "mongodb://testuser:testuser1@ds016138.mlab.com:16138/restaurant-data-service",
-  "cors-header": "https://web-ui-service.herokuapp.com"
+  "cors-header": "web-ui-service.herokuapp.com"
 }
