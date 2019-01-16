@@ -38,13 +38,22 @@ async function getRestaurants() {
 }
 
 async function postRestaurant(body) {
-  let restaurant = new Restaurant({
+  let restaurant = await Restaurant.findOne({name: body.name, postcode: body.postcode});
+  if (restaurant) {
+    console.log(`Updating ${restaurant.name}s infomation`);
+    restaurant.coords = body.coords;
+    restaurant.rating = body.rating;
+    restaurant.dishes = body.dishes;
+    return await restaurant.save();
+  }
+  console.log(`Creating new restaurant named ${body.name}`);
+  restaurant = new Restaurant({
     name: body.name,
     postcode: body.postcode,
     coords: body.coords,
     rating: body.rating,
     dishes: body.dishes,
-  })
+  });
   return await restaurant.save();
 }
 

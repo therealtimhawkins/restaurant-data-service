@@ -1,4 +1,4 @@
 {
   "db": "mongodb://testuser:testuser1@ds016138.mlab.com:16138/restaurant-data-service",
-  "cors-header": "http://localhost:3000"
+  "cors-header": "http://172.18.0.4/16:3000"
 }
