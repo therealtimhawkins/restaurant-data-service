@@ -4,6 +4,7 @@ const model = require('../models/restaurants');
 const asyncMiddleware = require('../middleware/async');
 
 router.get('/', asyncMiddleware(async (req, res) => {
+  console.log('Hit');
   const restaurants = await model.getRestaurants();
   res.send(restaurants);
 }));

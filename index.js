@@ -5,6 +5,8 @@ const corsMiddleware = require('./src/middleware/cors');
 const restaurantsRoutes = require('./src/routes/restaurants');
 const port = process.env.PORT || 3001;
 
+require('./src/startup/db')();
+
 app.use(corsMiddleware);
 app.use(error);
 
