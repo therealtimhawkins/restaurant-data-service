@@ -14,7 +14,7 @@ app.use(express.json());
 app.use('/api/restaurants', restaurantsRoutes);
 
 app.get('/', (req, res) => {
-  res.send(`Restaurant Data Service is running on port ${port}`);
+  res.send(`Restaurant Data Service is running on AWS on port ${port}`);
 });
 
 const server = app.listen(port, () => {
