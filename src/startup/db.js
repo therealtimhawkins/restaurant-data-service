@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const config = require('config');
 
 module.exports = function() {
-  mongoose.connect(config.get('db'))
-    .then(() => console.log(`Connected to ${config.get('db')}...`))
+  mongoose.connect(process.env.MongoDBUrl, { useNewUrlParser: true })
+    .then(() => console.log(`Connected to ${process.env.MongoDBUrl}...`))
     .catch(() => console.log('Connection to MongoDB failed...'));
 }

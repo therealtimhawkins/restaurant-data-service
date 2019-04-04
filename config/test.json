@@ -1,4 +1,0 @@
-{
-  "db": "mongodb://localhost/restaurants",
-  "cors-header": "http://localhost:3000"
-}
